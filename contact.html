@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>contact</title>
+		<link rel="stylesheet" href="./css/reset.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/contact.css" />
+	</head>
+	<body>
+		<header class="header">
+			<div class="flex">
+				<a href="index.html" class="logo">
+					<h1>
+						<img
+							src="./image/Logo.png"
+							alt="MUSTARDのロゴです"
+							class="logo-img"
+						/>
+					</h1>
+				</a>
+				<div class="header-nav">
+					<ul class="flex">
+						<li class="header-li">
+							<a href="beginner.html" class="link">FIRST TIME</a>
+						</li>
+						<li class="header-li">
+							<a href="service1.html" class="link">SERVICE</a>
+						</li>
+						<li class="header-li">
+							<a href="archive1.html" class="link">WORKS</a>
+						</li>
+						<li class="header-li">
+							<a href="blog.html" class="link">BLOG</a>
+						</li>
+						<a href="contact.html" class="sp-contact-link"
+							>ご相談・お問い合わせ</a
+						>
+						<a href="about.html" class="sp-about-link"
+							>MUSTRADについて<img
+								src="./image/mustard-icon.png"
+								alt="マスタードのアイコンです"
+						/></a>
+					</ul>
+				</div>
+				<div class="mail-block">
+					<a href="contact.html" class="link">
+						<img
+							src="./image/mail-icon.png"
+							alt="メールのアイコン画像です"
+							class="mail-icon"
+						/>
+					</a>
+				</div>
+				<div class="mustard-block">
+					<a href="about.html" class="link">
+						<img
+							src="./image/mustard-icon.png"
+							alt="マスタードのアイコン画像です"
+							class="mustard-icon"
+						/>
+						<span class="hover-message">MUSTRADについて</span>
+					</a>
+				</div>
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</header>
+
+		<div class="pankuzu">
+			<div class="inner">
+				<p class="pankuzu-txt">トップ > 初めての方へ > お問い合わせ</p>
+			</div>
+		</div>
+
+		<section class="contact mb-165">
+			<h3 class="section-ttl">ご相談・お問い合わせ</h3>
+    <div class="contact-subttl-box">
+      <p class="contact-sub-ttl">
+        お見積もりは無料です。いただいたお問い合わせは、通常1営業日以内にご連絡いたします。<br />内容によってはお答えできない場合もございますので、あらかじめご了承ください。<br />お問い合わせフォームが送信エラーになってしまう場合は直接kaito12soccer@icloud.comへご連絡ください。
+			</p>
+    </div>
+      
+			<div class="inner">
+        
+				<form
+					action="mailto:??Subject=WEBからの送信メール"
+					enctype="text/plain"
+					class="contact-form"
+          method="POST"
+				>
+        <p class="job-ttl">
+          お問い合わせ種類
+        </p>
+        <div class="contact-radio-btn">
+          <input class="radio-btn" type="radio" name="contact" id="contact1">
+          <label class="contact-label" for="contact1">お仕事のご相談</label>
+
+          <input class="radio-btn" type="radio" name="contact" id="contact2">
+          <label class="contact-label" for="contact2">お見積もり（無料）</label>
+
+          <input class="radio-btn" type="radio" name="contact" id="contact3">
+          <label class="contact-label" for="contact3">パートナーのご相談</label>
+        </div>
+
+        <div class="contact-txt-box">
+          <label class="contact-txt-label required" for="contact-txt1">会社名</label>
+          <input class="contact-txt" type="text" id="contact-txt1" placeholder="株式会社MUSTARD">
+        </div>
+
+        <div class="contact-txt-box">
+          <label class="contact-txt-label required" for="contact-txt2">お名前
+          </label>
+          <input class="contact-txt" type="text" id="contact-txt2" placeholder="山田太郎">
+        </div>
+
+        <div class="contact-txt-box">
+          <label class="contact-txt-label required" for="contact-txt3">お電話番号</label>
+          <input class="contact-txt" type="text" id="contact-txt3" placeholder="08084316332">
+        </div>
+
+        <div class="contact-txt-box">
+          <label class="contact-txt-label required" for="contact-txt4">メールアドレス</label>
+          <input class="contact-txt" type="text" id="contact-txt4" placeholder="kaito12soccer@icloud.com">
+        </div>
+
+        <div class="contact-txt-box">
+          <label class="contact-txt-label" for="contact-txt5">想定ご予算</label>
+          <input class="contact-txt" type="text" id="contact-txt5" placeholder="選択してください(だいたいで大丈夫です)">
+        </div>
+
+        <div class="contact-textarea-box">
+          <label class="contact-textarea-label required" for="contact-textarea">お問い合わせ内容
+          </label>
+          <textarea class="contact-textarea" name="textarea" id="contact-textarea" cols="30" rows="10"></textarea>
+        </div>
+        <div class="contact-btn-wrap">
+          <input type="submit"  class="contact-btn" value="送信する"></input>
+        </div>
+      </form>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="inner">
+				<div class="footer-nav flex">
+					<ul class="footer-ul">
+						<li class="footer-li footer-link-color">
+							<a href="beginner.html" class="footer-link">初めての方へ</a>
+						</li>
+						<li class="footer-li">
+							<a href="beginner-flow.html" class="footer-link">Web制作の流れ</a>
+						</li>
+						<li class="footer-li">
+							<a href="beginner-question.html" class="footer-link"
+								>Web制作で聞かれるよくある質問</a
+							>
+						</li>
+						<li class="footer-li">
+							<a href="beginner-decide.html" class="footer-link"
+								>Web制作にあたり決めておくといいこと</a
+							>
+						</li>
+					</ul>
+					<ul class="footer-ul">
+						<li class="footer-li footer-link-color">
+							<a href="service1.html" class="footer-link">サービス</a>
+						</li>
+						<li class="footer-li">
+							<a href="service1.html" class="footer-link"
+								>Web制作・デザイン制作</a
+							>
+						</li>
+						<li class="footer-li">
+							<a href="service2.html" class="footer-link">広告運用代行</a>
+						</li>
+						<li class="footer-li">
+							<a href="service3.html" class="footer-link"
+								>トータルブランディング</a
+							>
+						</li>
+						<li class="footer-li">
+							<a href="archive1.html" class="footer-link">制作実績</a>
+						</li>
+					</ul>
+					<ul class="footer-ul">
+						<li class="footer-li footer-link-color">
+							<a href="about.html" class="footer-link">マスタードについて</a>
+						</li>
+						<li class="footer-li">
+							<a href="privacy.html" class="footer-link"
+								>プライバシーポリシー</a
+							>
+						</li>
+						<li class="footer-li">
+							<a href="blog.html" class="footer-link">ブログ</a>
+						</li>
+					</ul>
+					<ul class="footer-ul">
+						<li class="footer-li footer-link-color">
+							<a href="contact.html" class="footer-link">お問い合わせ</a>
+						</li>
+						<li class="footer-li">
+							<a href="contact.html" class="footer-link"
+								>ご相談・お問い合わせ</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-bg">
+				<h2 class="footer-ttl">ソウゾウをミエルカするWeb制作会社</h2>
+				<a href="index.html" class="footer-logo">
+					<img
+						src="./image/footer-logo.png"
+						alt="フッターの画像です"
+						class="footer-img"
+					/>
+				</a>
+				<p class="address">
+					〒080-2470<br />
+					北海道札幌市中央区南1条西16丁目1-323 春野ビル内<br />
+					TEL:011-24-5222
+				</p>
+				<p class="copy">©2021MASTARD INC. ALL RIGHT RESERVED</p>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="./js/main.js"></script>
+	</body>
+</html>

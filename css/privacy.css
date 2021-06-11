@@ -1,0 +1,36 @@
+.privacy-policy .section-ttl {
+  margin-bottom: 129px;
+}
+
+.privacy-policy .inner {
+  width: 987px;
+}
+
+@media (max-width: 1024px) {
+  .privacy-policy .inner {
+    width: 85%;
+  }
+}
+
+.privacy-policy .privacy-ttl {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 26px;
+}
+
+@media (max-width: 450px) {
+  .privacy-policy .privacy-ttl {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+}
+
+.privacy-policy .privacy-txt {
+  font-size: 16px;
+  line-height: 2;
+  word-break: break-all;
+}
+
+.privacy-policy .privacy-txt:not(:last-child) {
+  margin-bottom: 57px;
+}

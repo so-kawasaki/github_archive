@@ -1,0 +1,1363 @@
+@import "base";
+// 共通クラス
+.flex {
+	display: flex;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.reverse {
+	flex-direction: row-reverse;
+}
+
+.mb-165 {
+	margin-bottom: 165px;
+	@include sp {
+		margin-bottom: 100px;
+	}
+}
+
+.mb-100 {
+	margin-bottom: 100px;
+}
+
+.pt-50 {
+	padding-top: 50px;
+}
+
+.inner {
+	width: 1022px;
+	display: block;
+	margin: 0 auto;
+}
+
+.section-ttl {
+	font-size: 38px;
+	letter-spacing: 0.1em;
+	font-weight: bold;
+	color: map-get($colors, header-color);
+	text-align: center;
+	text-shadow: 0 1px 1px;
+	position: relative;
+	z-index: 1;
+	display: block;
+	margin: 0 auto;
+	width: fit-content;
+	@include stab {
+		font-size: 28px;
+	}
+	@include sp {
+		font-size: 24px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		width: 0%;
+		height: 10px;
+		background: map-get($colors, thin-orange);
+		z-index: -1;
+		transition: all 0.8s;
+	}
+}
+.isActive {
+	&::after {
+		width: 100%;
+	}
+}
+
+.section-link {
+	padding: 32px 60px 29px;
+	border-radius: 41px;
+	background: map-get($colors, thin-orange);
+	color: map-get($colors, white);
+	display: block;
+	width: fit-content;
+	margin: 0 auto;
+	font-weight: bold;
+	letter-spacing: 0.4em;
+	font-size: 21px;
+	position: relative;
+	border: solid 1px map-get($colors, thin-orange);
+	text-align: center;
+	@include tab {
+		width: 60%;
+		padding: 20px 0px;
+		font-size: 20px;
+	}
+	@include sp {
+		width: 90%;
+		height: 57px;
+		font-size: 14px;
+		line-height: 57px;
+		text-align: center;
+		padding: 0;
+	}
+	&:hover {
+		color: map-get($colors, thin-orange);
+		background: map-get($colors, white);
+		border: solid 1px map-get($colors, thin-orange);
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		right: 25px;
+		width: 12px;
+		height: 12px;
+		border-top: 3px solid #ffffff;
+		border-right: 3px solid #ffffff;
+		transform: rotate(45deg);
+		top: 43%;
+		@include tab {
+			top: 39%;
+		}
+	}
+}
+
+.pankuzu {
+	padding-top: 130px;
+	margin-bottom: 69px;
+	font-size: 12px;
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+}
+
+.act {
+	transform: translateX(-175px);
+	transition: 0.5s;
+}
+
+// body
+body {
+	background: map-get($colors, body);
+	font-size: 18px;
+	@include Noto-Sans-JP;
+	-webkit-text-size-adjust: 100%;
+}
+
+// header
+.header {
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+	position: fixed;
+	z-index: 100;
+	background: map-get($colors, body);
+	box-shadow: 0 -5px 8px 1px;
+	.flex {
+		@include sp {
+			justify-content: space-between;
+		}
+		@include tab {
+			justify-content: space-between;
+		}
+	}
+	.logo {
+		margin-left: 100px;
+		@include tab {
+			margin-left: 20px;
+		}
+		.logo-img {
+			width: 288px;
+			height: 54px;
+			vertical-align: middle;
+			@include sp {
+				width: 188px;
+				height: 33px;
+			}
+		}
+	}
+	.header-nav {
+		display: block;
+		margin: 0 0 0 auto;
+		transition: 0.5s;
+		@include tab {
+			display: none;
+			background: map-get($colors, thin-orange);
+			width: 100%;
+			height: 100vh;
+			position: absolute;
+			z-index: 100;
+			text-align: center;
+			padding: 0;
+			transition: none;
+		}
+		.flex {
+			@include sp {
+				justify-content: space-evenly;
+				flex-direction: column;
+				height: 100vh;
+			}
+			@include tab {
+				justify-content: space-evenly;
+				flex-direction: column;
+				height: 100vh;
+			}
+		}
+		.header-li {
+			margin-right: 44px;
+			white-space: nowrap;
+			@include sp {
+				margin-right: 0;
+				font-weight: bold;
+				font-size: 18px;
+				margin-bottom: 0;
+			}
+			@include tab {
+				margin-right: 0;
+				font-weight: bold;
+				font-size: 18px;
+				margin-bottom: 0;
+			}
+		}
+		.link {
+			color: map-get($colors, header-color);
+			position: relative;
+			&::after {
+				position: absolute;
+				content: "";
+				bottom: 2px;
+				left: 0;
+				width: 100%;
+				height: 2px;
+				background: map-get($colors, header-color);
+				opacity: 0;
+				visibility: hidden;
+				transition: 0.3s;
+			}
+			&:hover {
+				&::after {
+					opacity: 1;
+					visibility: visible;
+					bottom: -6px;
+				}
+			}
+		}
+		.sp-contact-link {
+			display: none;
+			@include tab {
+				display: block;
+				width: 250px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background: map-get($colors, white);
+				margin: 0 auto;
+				border-radius: 20px;
+				color: map-get($colors, thin-orange);
+				padding: 0px 10px;
+			}
+		}
+		.sp-about-link {
+			display: none;
+			@include sp {
+				display: block;
+				width: 250px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background: map-get($colors, header-color);
+				margin: 0 auto;
+				border-radius: 20px;
+				color: map-get($colors, white);
+				padding: 0px 30px 0 0;
+				position: relative;
+				img {
+					width: 30px;
+					height: 30px;
+					margin-left: 10px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+			@include tab {
+				display: block;
+				width: 250px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				background: map-get($colors, header-color);
+				margin: 0 auto;
+				border-radius: 20px;
+				color: map-get($colors, white);
+				padding: 0px 30px 0 0;
+				position: relative;
+				img {
+					width: 30px;
+					height: 30px;
+					margin-left: 10px;
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+	.mail-block {
+		width: 89px;
+		height: 80px;
+		background: map-get($colors, black);
+		position: relative;
+		transition: 0.5s;
+		@include tab {
+			display: none;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+		.mail-icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.mustard-block {
+		width: 89px;
+		height: 80px;
+		background: map-get($colors, thin-orange);
+		position: relative;
+		.hover-message {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			display: block;
+			white-space: nowrap;
+			height: 80px;
+			padding: 0 0 0 10px;
+			color: map-get($colors, white);
+			background: map-get($colors, thin-orange);
+			z-index: -1;
+			transition: 0.5s;
+			&:hover {
+				padding: 0 80px 0 10px;
+			}
+		}
+
+		@include tab {
+			display: none;
+		}
+		.mustard-icon {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+.hamburger {
+	display: none;
+	@include tab {
+		position: relative;
+		display: block;
+		width: 40px;
+		height: 80px;
+		z-index: 1;
+		box-sizing: content-box;
+		z-index: 999;
+		margin-right: 20px;
+		// line-height: 80px;
+	}
+
+	span {
+		position: absolute;
+		background: map-get($colors, thin-orange);
+		display: block;
+		width: 27px;
+		height: 2px;
+		transition: 0.3s;
+		left: 10px;
+		&:nth-child(1) {
+			top: 31px;
+		}
+		&:nth-child(2) {
+			top: 40px;
+		}
+		&:nth-child(3) {
+			top: 49px;
+		}
+	}
+}
+body.hidden {
+	overflow: hidden;
+}
+.hamburger.active {
+	span {
+		&:nth-child(1) {
+			top: 39px;
+			transform: rotate(45deg);
+			background-color: map-get($colors, white);
+		}
+		&:nth-child(2) {
+			left: 40px;
+			opacity: 0;
+		}
+		&:nth-child(3) {
+			top: 39px;
+			transform: rotate(-45deg);
+			background-color: map-get($colors, white);
+		}
+	}
+}
+
+.mv-header {
+	.header {
+	}
+}
+
+// mv
+.mv {
+	text-align: center;
+	padding: 184px 0 36px;
+	color: map-get($colors, white);
+	position: relative;
+	.video-mv {
+		position: absolute;
+		content: "";
+		top: 0;
+		left: 0;
+		z-index: -100;
+		width: 100%;
+		// height: 564px;
+		height: 90vh;
+		object-fit: cover;
+		margin-top: 80px;
+	}
+	.mv-ttl {
+		font-size: 68px;
+		text-shadow: 0px 0px 1px map-get($colors, thin-orange);
+		@include 筑紫A丸ゴシック;
+		font-weight: bold;
+		margin-bottom: 34px;
+		@include tab {
+			font-size: 46px;
+		}
+		@include sp {
+			font-size: 28px;
+			margin-bottom: 16px;
+		}
+	}
+	.mv-sub-ttl {
+		font-size: 48px;
+		margin-bottom: 28px;
+		text-shadow: 0px 0px 1px map-get($colors, thin-orange);
+		@include tab {
+			font-size: 30px;
+		}
+		@include sp {
+			font-size: 21px;
+		}
+	}
+	.mv-catch {
+		width: 667px;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 19px;
+		line-height: 22px;
+		font-weight: bold;
+		line-height: 1.5;
+		@include tab {
+			width: 80%;
+			font-size: 18px;
+		}
+		@include sp {
+			font-size: 14px;
+		}
+	}
+	.contact-link {
+		border-radius: 20px;
+		width: 449px;
+		height: 82px;
+		font-size: 21px;
+		color: map-get($colors, white);
+		background: map-get($colors, thin-orange);
+		display: block;
+		margin: 0 auto;
+		line-height: 82px;
+		margin-bottom: 16px;
+		@include sp {
+			width: 315px;
+			height: 56px;
+			line-height: 56px;
+			font-size: 15px;
+		}
+		&:hover {
+			color: map-get($colors, thin-orange);
+			background: map-get($colors, white);
+			border: solid 1px map-get($colors, thin-orange);
+		}
+	}
+	.scroll-link {
+		color: map-get($colors, white);
+		font-weight: bold;
+		position: relative;
+		@include sp {
+			font-size: 15px;
+		}
+		.scroll-animation {
+			position: absolute;
+			top: 120%;
+			left: 50%;
+			transform: translateX(-50%);
+			&::after {
+				content: "";
+				/*描画位置*/
+				position: absolute;
+				/*線の形状*/
+				width: 2px;
+				height: 30px;
+				background: map-get($colors, white);
+				/*線の動き1.4秒かけて動く。永遠にループ*/
+				animation: scroll 1.4s ease-in-out infinite;
+				opacity: 0;
+			}
+		}
+	}
+
+	@keyframes scroll {
+		0% {
+			height: 0;
+			top: 0;
+			opacity: 0;
+		}
+		30% {
+			height: 30px;
+			opacity: 1;
+		}
+		100% {
+			height: 0;
+			top: 50px;
+			opacity: 0;
+		}
+	}
+}
+
+// archive
+.archive {
+	.inner {
+		width: 90%;
+		@include tab {
+			width: 85%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 56px;
+	}
+	.archive-content {
+		width: 100%;
+		justify-content: space-between;
+
+		@include sp {
+			width: 100%;
+		}
+		.archive-box {
+			margin-bottom: 73px;
+			width: 48%;
+			@include tab {
+				width: 48%;
+				height: auto;
+			}
+			@include sp {
+				width: 100%;
+				height: 158px;
+			}
+			&:hover {
+				opacity: 0.7;
+			}
+			.archive-img {
+				width: 100%;
+			}
+			.archive-ttl {
+				color: map-get($colors, thin-orange);
+				font-weight: bold;
+				font-size: 22px;
+				margin-top: 29px;
+				@include tab {
+					margin-top: 15px;
+					font-size: 16px;
+				}
+				@include sp {
+					font-size: 14px;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+}
+
+// service
+.service {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+		@include stab {
+			width: 420px;
+		}
+		@include sp {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 52px;
+	}
+	.service-content {
+		.service-card {
+			width: 100%;
+			border-radius: 20px;
+			background: map-get($colors, white);
+			padding: 19px 50px;
+			margin-bottom: 50px;
+			justify-content: space-between;
+			@include tab {
+				width: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				padding: 19px 29px;
+				// justify-content: center;
+			}
+			.service-txt-box {
+				padding: 39px 0 31px;
+				width: 385px;
+				@include tab {
+					width: 48%;
+					display: block;
+					margin: 0 auto;
+				}
+				@include stab {
+					padding: 0 0px 10px;
+					width: 70%;
+				}
+				@include sp {
+					width: 100%;
+				}
+				.service-ttl {
+					font-size: 28px;
+					line-height: 1.5;
+					font-weight: bold;
+					margin-bottom: 19px;
+					@include tab {
+						width: 100%;
+					}
+					@include sp {
+						width: 90%;
+						font-size: 21px;
+					}
+				}
+				.service-sub-ttl {
+					margin-bottom: 14px;
+					line-height: 1.5;
+					width: 370px;
+					color: map-get($colors, black);
+					@include tab {
+						width: 100%;
+					}
+					@include sp {
+						font-size: 14px;
+						width: 100%;
+					}
+				}
+				.section-link {
+					padding: 25px 50px 22px;
+					font-size: 16px;
+					text-align: center;
+					@include tab {
+						padding: 25px 0;
+						padding: 0;
+						width: 90%;
+						height: 40px;
+						line-height: 40px;
+						text-align: center;
+						font-size: 14px;
+					}
+					&::after {
+						width: 9px;
+						height: 9px;
+						@include tab {
+							width: 7px;
+							height: 7px;
+							top: 40%;
+							right: 10px;
+						}
+					}
+				}
+			}
+			.service-img {
+				display: flex;
+				align-items: center;
+				@include tab {
+					width: 48%;
+					margin: 0 auto;
+					@include stab {
+						width: 70%;
+					}
+				}
+				@include sp {
+					width: auto;
+					height: auto;
+				}
+			}
+			.pc-sp-img {
+				width: 457px;
+				height: 352px;
+				@include tab {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.advertising-img {
+				width: 563px;
+				height: 251px;
+				@include tab {
+					width: 100%;
+					height: auto;
+				}
+			}
+			.branding-img {
+				width: 563px;
+				height: 251px;
+				@include tab {
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+}
+
+// sub-heading
+.sub-heading {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+	background: map-get($colors, white);
+	padding: 61px 0 50px;
+	.section-ttl {
+		margin-bottom: 66px;
+		@include tab {
+			width: 80%;
+		}
+	}
+	.flex {
+		@include tab {
+			flex-wrap: wrap-reverse;
+			justify-content: center;
+		}
+		.sugg-box {
+			width: 511px;
+			height: 309px;
+			position: relative;
+			margin-right: 50px;
+			img {
+				@include tab {
+					position: absolute;
+					bottom: 0;
+					width: 175px;
+					height: 175px;
+				}
+			}
+
+			@include tab {
+				display: block;
+				bottom: 0;
+				margin-right: 0;
+				height: 330px;
+			}
+			.small-round {
+				position: absolute;
+				width: 38px;
+				height: 38px;
+				border-radius: 50%;
+				background: map-get($colors, body);
+				display: block;
+				top: 40%;
+				right: 22%;
+				@include tab {
+					top: 30%;
+					right: 57%;
+				}
+			}
+			.large-round {
+				position: absolute;
+				width: 64px;
+				height: 64px;
+				border-radius: 50%;
+				background: map-get($colors, body);
+				display: block;
+				top: 26%;
+				right: 0;
+				@include tab {
+					top: 7%;
+					right: 45%;
+				}
+			}
+		}
+		.sugg-ul {
+			margin-top: 21px;
+			display: block;
+			@include sp {
+				width: 100%;
+			}
+			.sugg-li {
+				font-weight: bold;
+				&:not(:last-child) {
+					margin-bottom: 18px;
+				}
+				.check-icon {
+					margin-right: 5px;
+				}
+				@include sp {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+
+// question
+.question {
+	.section-ttl {
+		margin-bottom: 37px;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			width: 82%;
+		}
+	}
+	.inner {
+		width: 800px;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			width: 90%;
+		}
+		.question-txt1 {
+			margin-bottom: 20px;
+			line-height: 1.5;
+			@include sp {
+				font-size: 14px;
+			}
+		}
+		.question-txt2 {
+			line-height: 2;
+			@include sp {
+				font-size: 14px;
+			}
+			.link {
+				color: map-get($colors, thin-orange);
+				&:hover {
+					opacity: 0.7;
+				}
+			}
+		}
+		.question-ttl {
+			margin-bottom: 17px;
+			font-weight: bold;
+			@include sp {
+				font-size: 16px;
+			}
+		}
+		.question-box {
+			background: map-get($colors, white);
+			border-radius: 20px;
+			padding: 25px 43px 22px;
+			margin-bottom: 55px;
+			@include sp {
+				padding: 18px 22px;
+			}
+			.question-box-txt {
+				&:not(:last-child) {
+					margin-bottom: 32px;
+					@include sp {
+						margin-bottom: 16px;
+					}
+				}
+				@include sp {
+					font-size: 14px;
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
+
+// about
+.about {
+	text-align: center;
+	background: map-get($colors, white);
+	padding: 66px 0 50px;
+	z-index: 2;
+	position: relative;
+	.section-ttl {
+		margin-bottom: 29px;
+	}
+	.about-ttl {
+		font-size: 28px;
+		width: 552px;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 29px;
+		line-height: 1.5;
+		@include tab {
+			width: 90%;
+			font-size: 22px;
+		}
+		@include sp {
+			font-size: 16px;
+		}
+		.about-color {
+			color: map-get($colors, dark-orange);
+		}
+		.deco {
+			font-size: 28px;
+			font-weight: normal;
+			margin-bottom: 0;
+			letter-spacing: normal;
+			@include tab {
+				font-size: 22px;
+			}
+			@include sp {
+				font-size: 16px;
+			}
+		}
+	}
+	.about-sub-ttl {
+		width: 735px;
+		display: block;
+		margin: 0 auto;
+		line-height: 1.5;
+		margin-bottom: 38px;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			text-align: left;
+		}
+	}
+}
+
+// feature
+.features {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+		@include stab {
+			width: 420px;
+		}
+		@include sp {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 44px;
+	}
+	.features-content {
+		.feature-card {
+			background: map-get($colors, white);
+			padding: 50px 50px 30px;
+			margin-bottom: 50px;
+			border-radius: 20px;
+			justify-content: space-between;
+			@include tab {
+				flex-wrap: wrap;
+				padding: 40px 30px;
+				justify-content: center;
+			}
+			.feature-txt-box {
+				width: 460px;
+				.feature-sub-ttl {
+					color: map-get($colors, feature);
+					font-weight: bold;
+					font-size: 21px;
+					margin-bottom: 30px;
+					@include sp {
+						font-size: 14px;
+						margin-bottom: 26px;
+					}
+				}
+				.feature-ttl {
+					font-size: 28px;
+					font-weight: bold;
+					line-height: 1.5;
+					margin-bottom: 19px;
+					color: map-get($colors, black);
+					@include sp {
+						font-size: 21px;
+					}
+				}
+				.feature-txt {
+					line-height: 1.5;
+					color: map-get($colors, black);
+					@include tab {
+						margin-bottom: 20px;
+					}
+				}
+			}
+			.feature-img-box {
+				@include sp {
+					text-align: center;
+				}
+			}
+			.feature-img {
+				width: 95%;
+				@include sp {
+					width: 80%;
+				}
+			}
+		}
+	}
+}
+
+// beginners
+.beginners {
+	.inner {
+		@include sp {
+			width: 90%;
+		}
+		@include tab {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 44px;
+	}
+	.beginners-txt {
+		width: 700px;
+		line-height: 2;
+		margin: 0 auto 43px;
+		display: block;
+		@include stab {
+			width: 90%;
+			font-size: 14px;
+		}
+	}
+	.content-3 {
+		justify-content: space-between;
+		@include stab {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.content-3-box {
+			width: 32%;
+			height: 155px;
+			background: map-get($colors, white);
+			align-items: center;
+			text-align: center;
+			border-radius: 20px;
+			box-shadow: 0 4px 8px -6px;
+			color: map-get($colors, black);
+			padding: 0px 50px;
+			@include tab {
+				padding: 0 30px;
+			}
+			@include stab {
+				width: 95%;
+				margin-bottom: 20px;
+				height: 120px;
+			}
+			&:hover {
+				background: map-get($colors, thin-orange);
+				border: solid 1px map-get($colors, thin-orange);
+				color: map-get($colors, white);
+			}
+			.content-3-txt {
+				display: block;
+				margin: 0 auto;
+				line-height: 1.5;
+				font-weight: bold;
+			}
+		}
+		.click-content-3-box {
+			width: 32%;
+			height: 155px;
+			background: map-get($colors, branding);
+			align-items: center;
+			text-align: center;
+			border-radius: 20px;
+			box-shadow: 0 4px 8px -6px #000;
+			color: map-get($colors, white);
+			padding: 0px 50px;
+			@include tab {
+				padding: 0 30px;
+			}
+			@include stab {
+				width: 95%;
+				margin-bottom: 20px;
+				height: 120px;
+			}
+			.content-3-txt {
+				display: block;
+				margin: 0 auto;
+				line-height: 1.5;
+				font-weight: bold;
+			}
+		}
+		.orange-content-3-box {
+			width: 32%;
+			height: 155px;
+			background: map-get($colors, thin-orange);
+			align-items: center;
+			text-align: center;
+			border-radius: 20px;
+			box-shadow: 0 4px 8px -6px #000;
+			color: map-get($colors, white);
+			padding: 0px 50px;
+			@include tab {
+				padding: 0 30px;
+			}
+			@include stab {
+				width: 95%;
+				margin-bottom: 20px;
+				height: 120px;
+			}
+			.content-3-txt {
+				display: block;
+				margin: 0 auto;
+				line-height: 1.5;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+// banner
+.banner {
+	background: map-get($colors, thin-orange);
+	padding: 76px 70px;
+	text-align: center;
+	@include sp {
+		padding: 60px 40px;
+	}
+	.banner-ttl {
+		color: map-get($colors, white);
+		line-height: 1.5;
+		font-weight: bold;
+		font-size: 38px;
+		margin-bottom: 46px;
+		@include stab {
+			font-size: 30px;
+		}
+		@include sp {
+			font-size: 22px;
+			text-align: left;
+		}
+	}
+	.contact-link {
+		border-radius: 20px;
+		width: 449px;
+		height: 82px;
+		font-size: 21px;
+		border: solid 1px map-get($colors, thin-orange);
+		color: map-get($colors, thin-orange);
+		background: map-get($colors, white);
+		display: block;
+		margin: 0 auto;
+		line-height: 82px;
+		margin-bottom: 16px;
+		font-weight: bold;
+		position: relative;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			font-size: 15px;
+			height: 60px;
+			line-height: 60px;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			right: 25px;
+			width: 12px;
+			height: 12px;
+			border-top: 3px solid map-get($colors, thin-orange);
+			border-right: 3px solid map-get($colors, thin-orange);
+			transform: rotate(45deg);
+			top: 43%;
+			@include sp {
+				width: 9px;
+				height: 9px;
+				top: 40%;
+			}
+		}
+		&:hover {
+			color: map-get($colors, white);
+			background: map-get($colors, thin-orange);
+			border: solid 2px map-get($colors, white);
+		}
+	}
+}
+
+// slide
+.slide {
+	.inner {
+		width: 80%;
+		@include sp {
+			width: 80%;
+		}
+		@include tab {
+			width: 80%;
+		}
+	}
+	.swiper-container2 {
+		position: relative;
+	}
+
+	.swiper-container {
+		position: relative;
+		.swiper-wrapper {
+			.swiper-slide {
+				width: 45%;
+				.slide-img {
+					width: 100%;
+					@include tab {
+						width: 100%;
+					}
+				}
+			}
+		}
+	}
+	.swiper-button-prev {
+		left: -100px;
+		background: url(../image/prev.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 40px;
+		height: 40px;
+		background-size: contain;
+		@include sp {
+			width: 19px;
+			height: 19px;
+			left: -30px;
+			transform: translateY(55%);
+		}
+		@include tab {
+			width: 19px;
+			height: 19px;
+			left: -30px;
+			transform: translateY(55%);
+		}
+	}
+	.swiper-button-next {
+		right: -100px;
+		background: url(../image/next.png);
+		background-repeat: no-repeat;
+		background-size: cover;
+		width: 40px;
+		height: 40px;
+		background-size: contain;
+		@include sp {
+			width: 19px;
+			height: 19px;
+			right: -30px;
+			transform: translateY(55%);
+		}
+		@include tab {
+			width: 19px;
+			height: 19px;
+			right: -30px;
+			transform: translateY(55%);
+		}
+	}
+}
+
+// footer
+.footer {
+	background: map-get($colors, white);
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+		.footer-nav {
+			padding: 55px 0 48px;
+			justify-content: space-between;
+			@include stab {
+				flex-wrap: wrap;
+			}
+			@include sp {
+				display: none;
+			}
+			.footer-ul {
+				width: 170px;
+				@include tab {
+					width: 20%;
+				}
+				@include stab {
+					width: 40%;
+				}
+				.footer-li {
+					margin-bottom: 26px;
+					line-height: 1.5;
+					&:hover {
+						opacity: 0.7;
+					}
+					.footer-link {
+						color: map-get($colors, header-color);
+						font-size: 14px;
+					}
+				}
+				.footer-link-color {
+					.footer-link {
+						color: map-get($colors, dark-orange);
+						font-size: 18px;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+	}
+	.footer-bg {
+		background: map-get($colors, body);
+		padding: 61px 0 19px;
+		text-align: center;
+		color: map-get($colors, header-color);
+
+		.footer-ttl {
+			font-size: 38px;
+			font-weight: bold;
+			margin-bottom: 22px;
+			@include tab {
+				width: 80%;
+				display: block;
+				margin: 0 auto 15px;
+				line-height: 2;
+			}
+			@include stab {
+				font-size: 30px;
+			}
+			@include sp {
+				font-size: 22px;
+			}
+		}
+		.footer-logo {
+			margin-bottom: 22px;
+		}
+		.address {
+			line-height: 1.5;
+			margin-bottom: 25px;
+			@include sp {
+				display: block;
+				margin: 0 auto 18px;
+				width: 250px;
+				font-size: 16px;
+			}
+		}
+		.copy {
+			@include sp {
+				font-size: 16px;
+			}
+		}
+	}
+}

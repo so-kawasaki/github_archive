@@ -1,0 +1,363 @@
+@import "base";
+// 共通
+.pt-173 {
+	padding-top: 173px;
+}
+// contact
+.contact {
+	.section-ttl {
+		margin-bottom: 31px;
+	}
+	.contact-subttl-box {
+		width: 987px;
+		display: block;
+		margin: 0 auto;
+		line-height: 1.5;
+		margin-bottom: 97px;
+		@include tab {
+			width: 90%;
+			font-size: 14px;
+		}
+		.contact-sub-ttl {
+			text-align: left;
+		}
+	}
+	.inner {
+		width: 665px;
+		@include stab {
+			width: 90%;
+		}
+	}
+	.contact-form {
+		.job-ttl {
+			font-size: 21px;
+			font-weight: bold;
+			margin-bottom: 23px;
+			@include sp {
+				font-size: 16px;
+			}
+		}
+		.contact-radio-btn {
+			margin-bottom: 37px;
+			.radio-btn {
+				display: none;
+				&:checked + .contact-label {
+					&::after {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 3px;
+						left: 3px;
+						width: 11px;
+						height: 11px;
+						background: map-get($colors, thin-orange);
+						border-radius: 50%;
+					}
+				}
+			}
+			.contact-label {
+				font-size: 16px;
+				font-weight: bold;
+				@include stab {
+					display: block;
+					font-size: 14px;
+					margin-bottom: 5px;
+					font-weight: normal;
+				}
+			}
+			.radio-btn + .contact-label {
+				padding-left: 20px;
+				position: relative;
+				margin-right: 20px;
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 15px;
+					height: 15px;
+					border: 1px solid #999;
+					border-radius: 50%;
+				}
+			}
+		}
+		.contact-txt-box {
+			display: flex;
+			margin-bottom: 20px;
+			@include stab {
+				flex-wrap: wrap;
+			}
+			.contact-txt-label {
+				font-size: 16px;
+				font-weight: bold;
+				width: 141px;
+				height: 44px;
+				line-height: 44px;
+				margin-right: 22px;
+				display: block;
+				@include stab {
+					font-size: 14px;
+					width: 90%;
+					height: 30px;
+					line-height: 30px;
+					margin-right: 10px;
+				}
+			}
+			.required {
+				position: relative;
+				&::after {
+					content: "※必須";
+					position: absolute;
+					display: block;
+					font-size: 13px;
+					font-weight: normal;
+					line-height: 13px;
+					@include stab {
+						display: inline-block;
+						line-height: 30px;
+						margin-left: 10px;
+						position: relative;
+					}
+				}
+			}
+			.contact-txt {
+				padding: 17px 20px 12px;
+				border-radius: 10px;
+				box-shadow: 0 3px 6px -5px;
+				width: 502px;
+				height: 44px;
+				line-height: 44px;
+				border: none;
+				@include stab {
+					width: 100%;
+					height: 30px;
+					line-height: 30px;
+					padding: 5px 15px;
+				}
+			}
+		}
+		.contact-textarea-box {
+			display: flex;
+			margin-bottom: 50px;
+			@include stab {
+				flex-wrap: wrap;
+			}
+			.contact-textarea-label {
+				font-size: 16px;
+				font-weight: bold;
+				width: 141px;
+				height: 44px;
+				line-height: 44px;
+				margin-right: 22px;
+				display: block;
+				@include stab {
+					width: 100%;
+				}
+			}
+			.contact-textarea {
+				padding: 17px 20px 12px;
+				border-radius: 10px;
+				box-shadow: 0 3px 6px -5px;
+				width: 502px;
+				height: 201px;
+				line-height: 44px;
+				border: none;
+				resize: none;
+				line-height: 22px;
+				@include stab {
+					width: 100%;
+					padding: 5px 15px;
+				}
+			}
+		}
+		.contact-btn-wrap {
+			position: relative;
+			width: 449px;
+			margin: 0 auto;
+			@include stab {
+				width: 90%;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				right: 25px;
+				width: 12px;
+				height: 12px;
+				border-top: 3px solid #ffffff;
+				border-right: 3px solid #ffffff;
+				transform: rotate(45deg);
+				top: 43%;
+				@include stab {
+					width: 9px;
+					height: 9px;
+					top: 36%;
+					right: 13%;
+					border-top: 2px solid #ffffff;
+					border-right: 2px solid #ffffff;
+				}
+			}
+			.contact-btn {
+				width: 449px;
+				height: 82px;
+				font-size: 21px;
+				font-weight: bold;
+				color: map-get($colors, white);
+				background: map-get($colors, thin-orange);
+				border-radius: 10px;
+				border: none;
+				margin: 0 auto;
+				display: block;
+				-webkit-appearance: none;
+				@include stab {
+					width: 80%;
+					height: auto;
+					font-size: 16px;
+					line-height: 40px;
+				}
+				&:hover {
+					color: map-get($colors, thin-orange);
+					background: map-get($colors, white);
+					border: solid 2px map-get($colors, thin-orange);
+				}
+			}
+		}
+	}
+}
+
+// contact-confirm
+.contact-confirm {
+	.section-ttl {
+		margin-bottom: 66px;
+		@include stab {
+			width: 90%;
+			line-height: 1.5;
+		}
+	}
+	.inner {
+		width: 584px;
+		@include stab {
+			width: 90%;
+		}
+	}
+	.confirm-ttl {
+		margin-bottom: 18px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+	.confirm-txt {
+		font-size: 16px;
+		&:not(:last-child) {
+			margin-bottom: 58px;
+		}
+	}
+	.flex {
+		@include sp {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.back-link {
+			width: 266px;
+			height: 82px;
+			font-size: 21px;
+			font-weight: bold;
+			color: map-get($colors, thin-orange);
+			background: map-get($colors, white);
+			border-radius: 10px;
+			border: solid 2px map-get($colors, thin-orange);
+			margin: 0 auto;
+			display: block;
+			text-align: center;
+			line-height: 82px;
+			@include stab {
+				width: 47%;
+				height: 45px;
+				line-height: 45px;
+				font-size: 18px;
+			}
+			@include sp {
+				width: 90%;
+				margin-bottom: 20px;
+				height: auto;
+				font-size: 16px;
+				line-height: 45px;
+			}
+			&:hover {
+				color: map-get($colors, white);
+				background: map-get($colors, thin-orange);
+			}
+		}
+		.confirm-link {
+			width: 266px;
+			height: 82px;
+			font-size: 21px;
+			font-weight: bold;
+			color: map-get($colors, white);
+			background: map-get($colors, thin-orange);
+			border-radius: 10px;
+			border: none;
+			margin: 0 auto;
+			display: block;
+			text-align: center;
+			line-height: 82px;
+			border: solid 2px map-get($colors, thin-orange);
+			position: relative;
+			@include stab {
+				width: 47%;
+				height: 45px;
+				line-height: 45px;
+				font-size: 18px;
+			}
+			@include sp {
+				width: 90%;
+				height: auto;
+				font-size: 16px;
+				line-height: 45px;
+			}
+			&:hover {
+				color: map-get($colors, thin-orange);
+				background: map-get($colors, white);
+				border: solid 2px map-get($colors, thin-orange);
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				right: 25px;
+				width: 12px;
+				height: 12px;
+				border-top: 3px solid #ffffff;
+				border-right: 3px solid #ffffff;
+				transform: rotate(45deg);
+				top: 43%;
+				@include sp {
+					width: 9px;
+					height: 9px;
+					top: 37%;
+				}
+			}
+		}
+	}
+}
+
+// contact-complete
+.contact-complete {
+	.inner {
+		width: 861px;
+		@include tab {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 61px;
+	}
+	.complete-txt {
+		text-align: center;
+		line-height: 2;
+		font-size: 16px;
+		font-weight: bold;
+		@include sp {
+			font-size: 14px;
+			text-align: left;
+		}
+	}
+}

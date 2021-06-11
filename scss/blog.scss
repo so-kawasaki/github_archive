@@ -1,0 +1,79 @@
+@import "base";
+
+// blog
+.blog {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 52px;
+	}
+	.blog-content {
+		width: 100%;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		@include stab {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+	}
+	.content-card {
+		width: 300px;
+		height: 346px;
+		background: map-get($colors, white);
+		border-radius: 20px;
+		@include tab {
+			width: 32%;
+			height: auto;
+		}
+		@include stab {
+			width: 60%;
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+		@include sp {
+			width: 90%;
+			height: auto;
+		}
+		.blog-img {
+			width: 100%;
+		}
+		.content-body {
+			width: 100%;
+			padding: 25px 21px 18px;
+			.content-txt {
+				line-height: 1.5;
+				letter-spacing: 0.1em;
+				margin-bottom: 18px;
+				line-height: 1.5;
+				@include sp {
+					font-size: 16px;
+				}
+			}
+			.date {
+				display: inline-block;
+				font-size: 14px;
+				font-weight: bold;
+				margin-right: 21px;
+				@include sp {
+					width: 30%;
+				}
+			}
+			.category {
+				display: inline-block;
+				font-size: 14px;
+				font-weight: bold;
+				padding: 10px 14px 8px;
+				background: map-get($colors, branding);
+				border-radius: 20px;
+				@include sp {
+					width: auto;
+					padding: 4px 6px;
+				}
+			}
+		}
+	}
+}

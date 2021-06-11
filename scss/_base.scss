@@ -1,0 +1,58 @@
+// COLORS
+// @include cl(black);
+//--------------------------------------------------
+$colors: (
+	dark-orange: #eb6100,
+	red-purple: #df0050,
+	thin-orange: #fabe00,
+	thin-green: #c9d24c,
+	dark-green: #6f784d,
+	khaki: #efe5c0,
+	body: #f2f2f2,
+	black: #3c3837,
+	header-color: #242424,
+	white: #ffffff,
+	branding: #dee0df,
+	feature: #a7a7a7,
+);
+
+@function cl($key) {
+	@return map-get($colors, $key);
+}
+
+// FONT
+// @include 筑紫A丸ゴシック;
+//--------------------------------------------------
+
+@mixin 筑紫A丸ゴシック {
+	font-family: "筑紫A丸ゴシック", "ヒラギノ丸ゴ ProN";
+}
+
+// FONT
+// @include Noto-Sans-JP;
+//--------------------------------------------------
+@mixin Noto-Sans-JP {
+	font-family: "Noto Sans JP";
+}
+
+// ====================================================
+// breakpoint
+$tab: 1024px; // タブレット
+$stab: 800px;
+$sp: 450px; //スマホ
+
+@mixin tab {
+	@media (max-width: ($tab)) {
+		@content;
+	}
+}
+@mixin stab {
+	@media (max-width: ($stab)) {
+		@content;
+	}
+}
+@mixin sp {
+	@media (max-width: ($sp)) {
+		@content;
+	}
+}

@@ -1,0 +1,122 @@
+.archive-case .inner {
+  width: 100%;
+}
+
+.archive-case .section-ttl {
+  margin-bottom: 113px;
+  position: relative;
+}
+
+.archive-case .section-ttl::before {
+  content: "CASE";
+  display: block;
+  font-size: 21px;
+  margin: 0 auto 50px;
+  letter-spacing: 0.1em;
+}
+
+.archive-case .section-ttl::after {
+  content: "";
+  background: #242424;
+  width: 2px;
+  height: 28px;
+  display: block;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+.archive-case .archive-link .short-img {
+  width: 100%;
+}
+
+.archive-case .archive-table {
+  padding: 32px 50px 29px;
+  display: table;
+  margin: 0 auto 100px;
+  background: #ffffff;
+  border-radius: 20px;
+  width: 702px;
+}
+
+@media (max-width: 1024px) {
+  .archive-case .archive-table {
+    width: 90%;
+    padding: 25px 30px;
+  }
+}
+
+.archive-case .archive-table .archive-tr {
+  padding: 23px 0;
+}
+
+@media (max-width: 450px) {
+  .archive-case .archive-table .archive-tr {
+    padding: 15px 0;
+  }
+}
+
+.archive-case .archive-table .archive-tr:not(:last-child) {
+  border-bottom: solid 1px #242424;
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.archive-case .archive-table .archive-tr .archive-th {
+  width: 150px;
+  margin-right: 30px;
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+}
+
+@media (max-width: 1024px) {
+  .archive-case .archive-table .archive-tr .archive-th {
+    width: 25%;
+  }
+}
+
+@media (max-width: 450px) {
+  .archive-case .archive-table .archive-tr .archive-th {
+    font-size: 16px;
+    width: 100px;
+    margin-right: 15px;
+  }
+}
+
+.archive-case .archive-table .archive-tr .archive-td {
+  display: inline-block;
+}
+
+@media (max-width: 450px) {
+  .archive-case .archive-table .archive-tr .archive-td {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 450px) {
+  .archive-case .archive-table .archive-tr .archive-td .flex {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .archive-case .archive-table .archive-tr .archive-td .flex .archive-li {
+    width: 50%;
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .archive-case .archive-table .archive-tr .archive-td .flex .archive-li {
+    margin-right: 20px;
+    width: 100px;
+  }
+}
+
+.archive-case .long-img {
+  width: 100%;
+}

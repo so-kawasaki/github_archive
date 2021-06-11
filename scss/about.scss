@@ -1,0 +1,145 @@
+@import "base";
+.about-page {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 39px;
+	}
+	.about-page-txt {
+		width: 672px;
+		display: block;
+		margin: 0 auto 150px;
+		line-height: 2;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			width: 90%;
+			font-size: 16px;
+			margin-bottom: 80px;
+		}
+	}
+	.about-page-box {
+		justify-content: space-evenly;
+		margin-bottom: 72px;
+		.about-content {
+			width: 250px;
+			display: block;
+			text-align: center;
+			@include stab {
+				&:first-child {
+					margin-bottom: 60px;
+				}
+			}
+			.about-content-ttl {
+				font-size: 28px;
+				display: block;
+				margin-bottom: 80px;
+				position: relative;
+				@include sp {
+					font-size: 22px;
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					width: 3px;
+					height: 47px;
+					top: 150%;
+					left: 50%;
+					background: map-get($colors, header-color);
+				}
+				.accent-color {
+					color: map-get($colors, thin-orange);
+				}
+			}
+			.about-content-txt {
+				@include sp {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.about-content-center {
+		width: 670px;
+		display: block;
+		text-align: center;
+		margin: 0 auto;
+		@include stab {
+			width: 90%;
+		}
+		.about-content-ttl {
+			font-size: 28px;
+			display: block;
+			margin-bottom: 80px;
+			position: relative;
+			@include sp {
+				font-size: 22px;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				width: 3px;
+				height: 47px;
+				top: 150%;
+				left: 50%;
+				background: map-get($colors, header-color);
+			}
+			.accent-color {
+				color: map-get($colors, thin-orange);
+			}
+		}
+		.about-content-txt {
+			color: map-get($colors, black);
+			line-height: 3;
+			@include sp {
+				font-size: 14px;
+				line-height: 2;
+			}
+		}
+	}
+}
+
+.company {
+	.section-ttl {
+		margin-bottom: 37px;
+	}
+	.company-table {
+		display: table;
+		margin: 0 auto;
+		width: 777px;
+		@include tab {
+			width: 90%;
+		}
+		.company-tr {
+			padding: 25px 0 21px;
+			display: block;
+			width: 100%;
+			border-bottom: solid 1px map-get($colors, header-color);
+			&:first-child {
+				width: 100%;
+				display: block;
+				border-top: solid 1px map-get($colors, header-color);
+			}
+			.company-th {
+				width: 270px;
+				text-align-last: left;
+				font-weight: bold;
+				@include sp {
+					font-size: 18px;
+					width: 100px;
+				}
+			}
+			.company-td {
+				@include sp {
+					font-size: 16px;
+				}
+			}
+			.lh2 {
+				line-height: 2;
+			}
+		}
+	}
+}

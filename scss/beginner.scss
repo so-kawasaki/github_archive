@@ -1,0 +1,556 @@
+@import "base";
+// flow
+.flow {
+	.section-ttl {
+		margin-bottom: 53px;
+	}
+	.flow-box {
+		width: 580px;
+		margin: 0 auto;
+		justify-content: space-between;
+		@include stab {
+			width: 300px;
+			flex-wrap: wrap;
+		}
+		.flow-content {
+			width: 40px;
+			height: 712px;
+			&:not(:last-child) {
+				margin-right: 20px;
+				@include stab {
+					margin-right: 0;
+				}
+			}
+			&:not(:nth-of-type(5n)) {
+				margin-right: 15px;
+			}
+			&:nth-of-type(-n + 5) {
+				@include stab {
+					margin-bottom: 20px;
+				}
+			}
+			.flow-number {
+				width: 40px;
+				height: 40px;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+				font-size: 21px;
+				font-weight: bold;
+				// text-align: center;
+
+				color: map-get($colors, white);
+				align-items: center;
+			}
+			.flow-txt {
+				padding-top: 22px;
+				width: 40px;
+				height: 672px;
+				writing-mode: vertical-rl;
+				background: map-get($colors, white);
+				display: flex;
+				// justify-content: center;
+				align-items: center;
+			}
+			.flow-color {
+				background: map-get($colors, thin-orange);
+				color: map-get($colors, white);
+			}
+		}
+	}
+}
+
+// flow-detailed
+.flow-detailed {
+	.inner {
+		width: 680px;
+		@include tab {
+			width: 90%;
+		}
+		.detailed-content {
+			padding: 50px 0;
+			@include sp {
+				padding: 20px 0;
+			}
+			&:not(:last-child) {
+				border-bottom: solid 2px map-get($colors, black);
+			}
+			.flex {
+				margin-bottom: 29px;
+				.detailed-number {
+					width: 50px;
+					height: 46px;
+					background: map-get($colors, thin-orange);
+					color: map-get($colors, white);
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 26px;
+					font-weight: bold;
+					margin-right: 33px;
+					@include sp {
+						font-size: 20px;
+						width: 40px;
+						height: 36px;
+					}
+				}
+				.detailed-ttl {
+					font-size: 28px;
+					font-weight: bold;
+					line-height: 46px;
+					@include sp {
+						font-size: 18px;
+						line-height: 36px;
+					}
+				}
+			}
+			.detailed-txt {
+				line-height: 1.5;
+				letter-spacing: 0.1em;
+				@include sp {
+					font-size: 14px;
+				}
+			}
+			.flex1 {
+				display: flex;
+				justify-content: space-between;
+				@include sp {
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+				.contact-link-box {
+					text-align: center;
+					margin-top: 43px;
+					margin-bottom: 21px;
+					width: 330px;
+					background: map-get($colors, white);
+					border: solid 1px map-get($colors, thin-orange);
+					padding: 24px 28px;
+					border-radius: 20px;
+					@include tab {
+						width: 48%;
+					}
+					@include sp {
+						width: 90%;
+						padding: 16px 18px;
+						margin-bottom: 10px;
+						margin-top: 20px;
+						margin-bottom: 0;
+					}
+					.contact-link-txt {
+						margin-bottom: 25px;
+						font-size: 14px;
+						letter-spacing: 0.1em;
+						@include sp {
+							margin-bottom: 10px;
+						}
+					}
+					.contact-link-ttl {
+						margin-bottom: 29px;
+						font-size: 24px;
+						font-weight: bold;
+						@include sp {
+							font-size: 18px;
+							margin-bottom: 12px;
+						}
+					}
+					.contact-link-btn {
+						background: map-get($colors, thin-orange);
+						color: map-get($colors, white);
+						display: flex;
+						width: 273px;
+						height: 50px;
+						justify-content: center;
+						align-items: center;
+						border-radius: 20px;
+						font-size: 14px;
+						font-weight: bold;
+						position: relative;
+						&:hover {
+							background: map-get($colors, white);
+							color: map-get($colors, thin-orange);
+							border: solid 1px map-get($colors, thin-orange);
+						}
+						@include tab {
+							width: 100%;
+						}
+						@include sp {
+							width: 100%;
+							height: 40px;
+						}
+						&::after {
+							content: "";
+							position: absolute;
+							right: 14px;
+							width: 8px;
+							height: 8px;
+							border-top: 2px solid #ffffff;
+							border-right: 2px solid #ffffff;
+							transform: rotate(45deg);
+							top: 40%;
+						}
+					}
+					.contact-link-phone {
+						font-size: 24px;
+						font-weight: bold;
+						color: map-get($colors, thin-orange);
+					}
+				}
+			}
+			.contact-flee {
+				background: map-get($colors, thin-orange);
+				color: map-get($colors, white);
+				display: flex;
+				width: 100%;
+				height: 50px;
+				justify-content: center;
+				align-items: center;
+				border-radius: 20px;
+				font-size: 14px;
+				font-weight: bold;
+				margin-top: 43px;
+				@include sp {
+					margin-top: 20px;
+				}
+			}
+		}
+	}
+}
+// beginner-decide
+.beginner-decide {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+	text-align: center;
+	.section-ttl {
+		margin-bottom: 27px;
+	}
+	.decide-txt {
+		width: 596px;
+		display: block;
+		line-height: 1.5;
+		margin: 0 auto 18px;
+		text-align: left;
+		@include tab {
+			width: 90%;
+		}
+		@include sp {
+			font-size: 14px;
+		}
+	}
+	.decide-box {
+		padding: 25px 43px;
+		background: map-get($colors, white);
+		border-radius: 20px;
+		text-align: left;
+		width: 770px;
+		margin: 0 auto;
+		@include tab {
+			width: 90%;
+			padding: 20px 18px;
+		}
+		.decide-box-txt {
+			margin-bottom: 14px;
+			@include sp {
+				line-height: 1.5;
+				font-size: 16px;
+			}
+			.decide-span {
+				display: block;
+			}
+			.decide-img {
+				margin-right: 17px;
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+}
+
+// beginner-decide-minimum
+.beginner-decide-minimum {
+	.inner {
+		@include tab {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 19px;
+		@include sp {
+			width: 80%;
+		}
+	}
+	.decide-attention {
+		text-align: center;
+		@include sp {
+			width: 80%;
+			display: block;
+			margin: 0 auto;
+		}
+	}
+	.decide-table {
+		width: 830px;
+		display: block;
+		margin: 0 auto;
+		border-spacing: 0px 60px;
+		@include tab {
+			width: 100%;
+		}
+		.decide-tr {
+			@include stab {
+				display: flex;
+				margin-bottom: 30px;
+			}
+			.decide-th {
+				height: 75px;
+				line-height: 75px;
+				width: 75px;
+				margin-right: 20px;
+				display: inline-block;
+				@include stab {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+				}
+				.decide-img {
+					vertical-align: middle;
+					@include stab {
+						width: 30px;
+						height: 30px;
+						line-height: 30px;
+					}
+				}
+			}
+			.decide-td {
+				@include stab {
+					display: block;
+				}
+				.decide-ttl {
+					display: inline-block;
+					vertical-align: middle;
+					height: 75px;
+					line-height: 75px;
+					font-size: 28px;
+					font-weight: bold;
+					@include stab {
+						height: auto;
+						line-height: 30px;
+						font-size: 24px;
+						display: block;
+					}
+					@include sp {
+						font-size: 18px;
+					}
+				}
+				.decide-txt {
+					line-height: 2;
+					@include sp {
+						display: block;
+						font-size: 14px;
+					}
+				}
+				.flex {
+					margin-top: 19px;
+					background: map-get($colors, white);
+					padding: 26px 46px;
+					border-radius: 20px;
+					justify-content: space-between;
+					width: 651px;
+					margin-bottom: 25px;
+					@include tab {
+						width: 100%;
+						flex-wrap: wrap;
+						padding: 20px 25px;
+					}
+					.target-table {
+						width: 260px;
+						@include sp {
+							width: 100%;
+						}
+						.target-tr {
+							display: block;
+							text-align: left;
+							line-height: 1.5;
+							&:not(:last-child) {
+								margin-bottom: 20px;
+							}
+							.target-th {
+								width: 60px;
+								font-size: 14px;
+								margin-right: 14px;
+								display: inline-block;
+								vertical-align: top;
+								transform: translateY(3px);
+							}
+							.target-td {
+								width: 150px;
+								font-size: 16px;
+								font-weight: bold;
+								display: inline-block;
+								@include sp {
+									font-size: 14px;
+									width: 100px;
+								}
+							}
+						}
+					}
+				}
+				.target-txt {
+					line-height: 1.5;
+					@include sp {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// beginner-question
+.beginner-question {
+	.inner {
+		width: 740px;
+		@include tab {
+			width: 70%;
+		}
+		@include sp {
+			width: 90%;
+		}
+	}
+	.section-ttl {
+		margin-bottom: 27px;
+		@include sp {
+			width: 90%;
+		}
+	}
+	.section-txt {
+		text-align: center;
+		margin-bottom: 90px;
+		line-height: 1.5;
+		@include sp {
+			width: 90%;
+			display: block;
+			margin: 0 auto 50px;
+			font-size: 14px;
+		}
+	}
+	.just-a-question {
+		.a-question {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+			.question-logo-box {
+				display: block;
+				background: map-get($colors, thin-orange);
+				width: 37px;
+				height: 32px;
+				line-height: 32px;
+				text-align: center;
+				margin-right: 21px;
+				@include sp {
+					width: 30px;
+					height: 24px;
+					line-height: 24px;
+				}
+				.question-logo {
+					font-size: 16px;
+					font-weight: bold;
+					color: map-get($colors, white);
+					@include sp {
+						font-size: 14px;
+					}
+				}
+			}
+			.question-txt {
+				display: block;
+				font-size: 16px;
+				line-height: 32px;
+				font-weight: bold;
+				@include sp {
+					width: 80%;
+					font-size: 14px;
+					line-height: 24px;
+				}
+			}
+		}
+	}
+
+	.question-answer-box {
+		.question-answer {
+			&:not(:last-child) {
+				margin-bottom: 44px;
+			}
+			.a-question {
+				display: flex;
+				margin-bottom: 20px;
+				.question-logo-box {
+					width: 43px;
+					height: 37px;
+					background: map-get($colors, thin-orange);
+					text-align: center;
+					line-height: 37px;
+					margin-right: 15px;
+					@include sp {
+						width: 33px;
+						height: 28px;
+						line-height: 28px;
+					}
+					.question-logo {
+						font-size: 24px;
+						font-weight: bold;
+						color: map-get($colors, white);
+						@include sp {
+							font-size: 18px;
+						}
+					}
+				}
+				.question-txt {
+					font-size: 24px;
+					font-weight: bold;
+					line-height: 37px;
+					@include sp {
+						font-size: 18px;
+						line-height: 26px;
+						width: 80%;
+					}
+				}
+			}
+			.an-answer {
+				display: flex;
+				.answer-logo-box {
+					width: 43px;
+					height: 37px;
+					background: map-get($colors, white);
+					text-align: center;
+					line-height: 37px;
+					margin-right: 15px;
+					border: solid 1px map-get($colors, thin-orange);
+					@include sp {
+						font-size: 18px;
+						width: 33px;
+						height: 28px;
+						line-height: 28px;
+					}
+					.answer-logo {
+						font-size: 24px;
+						font-weight: bold;
+						color: map-get($colors, thin-orange);
+						@include sp {
+							font-size: 18px;
+						}
+					}
+				}
+				.answer-txt {
+					width: 682px;
+					line-height: 2;
+					@include sp {
+						width: 80%;
+						font-size: 16px;
+					}
+				}
+			}
+		}
+	}
+}
